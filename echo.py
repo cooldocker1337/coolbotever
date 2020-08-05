@@ -23,9 +23,16 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 
-logger = logging.getLogger(__name__)
-updater = Updater("1203619718:AAFSFBeaFJ8lDVMcWAqmUkgv9YtCBH5CKiE", use_context=True)
+TOKEN = "1203619718:AAFSFBeaFJ8lDVMcWAqmUkgv9YtCBH5CKiE"
+URL = "https://veryvoolbot.herokuapp.com/"
 
+logger = logging.getLogger(__name__)
+updater = Updater(TOKEN, use_context=True)
+s = updater.bot.setWebhook('{URL}{HOOK}'.format(URL=URL, HOOK=TOKEN))
+if s:
+    print("webhook setup ok")
+else:
+    print("webhook setup failed")
 
 # Define a few command handlers. These usually take the two arguments update and
 # context. Error handlers also receive the raised TelegramError object in error.
