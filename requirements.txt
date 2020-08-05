@@ -4,7 +4,6 @@ certifi==2020.6.20
 cffi==1.14.1
 cryptography==3.0
 decorator==4.4.2
-duplicity==0.7.17
 enum34==1.1.10
 escape==1.1
 fasteners==0.12.0
